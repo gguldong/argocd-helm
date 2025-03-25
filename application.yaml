@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: configmap
+  namespace: argocd
+spec:
+  destination:
+    name: in-cluster
+    namespace: default
+  project: default
+  source:
+    path: application-ArgoCD
+    repoURL: https://github.com/gguldong/argocd-helm.git
+    targetRevision: HEAD
