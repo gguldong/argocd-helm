@@ -9,6 +9,6 @@ spec:
     namespace: default
   project: default
   source:
-    path: application-ArgoCD
+    path: application
     repoURL: https://github.com/gguldong/argocd-helm.git
     targetRevision: HEAD
