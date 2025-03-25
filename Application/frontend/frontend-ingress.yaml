@@ -21,7 +21,7 @@ spec:
         pathType: Prefix     #<<Prefix 해줘야 /경로 뒤의 다른 것들도 라우팅 해중(ex) /users  /login/~ 등)
         backend:
           service:
-            name: jungchat     #<<이거 서비스명이어야 함  배포하는 jungchat-service.yaml에서 metadata.name보면 jungchat임
+            name: frontend-service     #<<이거 서비스명이어야 함  배포하는 jungchat-service.yaml에서 metadata.name보면 jungchat임
             port:
               number: 80     #<<실제론 service의 port이고, service를 보면 port: 80, targetport(pod의 port): 8080으로 되어 있고, 위에서 annotation으로 alb.ingress.kubernetes.io/target-type: ip 로 타입을 하면 LB에서 직접 taretport로 전달 됨
 
