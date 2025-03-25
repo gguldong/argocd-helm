@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: 637423586845.dkr.ecr.ap-northeast-2.amazonaws.com/github-action-test:frontend-v1.0.3
+          image: 637423586845.dkr.ecr.ap-northeast-2.amazonaws.com/github-action-test:frontend-v1.0.4
           ports:
             - containerPort: 3000
