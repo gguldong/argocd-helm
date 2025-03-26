@@ -30,6 +30,6 @@ spec:
             - name: Username
               value: admin
             - name: Password
-              value: Saltlux12345
+              value: Saltlux12345!
             - name: Database
               value: multimodal_final_project
