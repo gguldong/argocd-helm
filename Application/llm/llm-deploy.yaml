@@ -99,3 +99,15 @@ spec:
                 secretKeyRef:
                   name: llm-api-secret
                   key: COHERE_API_KEY
+            - name: MODEL_PATH
+              value: "/app/models/OpenChat-3.5-7B-Mixtral-v2.0.i1-Q4_K_M.gguf"    #모델 마운트되어 있는 경로
+          volumeMounts:
+            - name: model-mount
+              mountPath: /app/models    # 컨테이너 내부 경로 (/app은 WORKDIR)
+      volumes:
+        - name: model-mount
+          persistentVolumeClaim:
+            claimName: openchat-model-pvc
+
+
+# 컨테이너 내부 경로 (/app은 WORKDIR)
