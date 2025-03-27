@@ -46,6 +46,8 @@ spec:
       labels:
         app: llm
     spec:
+      nodeSelector:       #<<<노드 셀렉터도 추가함!
+        node: gpu
       # GPU 전용 노드(gpu NodePool)로 스케줄링될 수 있도록 tolerations 추가
       tolerations:                        #<<gpu 노드풀 사용을 위해
         - key: "node"
