@@ -76,9 +76,9 @@ spec:
             # - containerPort: 8002   # 두 번째 포트 추가 (gRPC or inference용 등)
           resources:
             requests:
-              nvidia.com/gpu: 1
+              nvidia.com/gpu: 1       #<<<<limits랑 일치해야 한다고 애러뜸(deploy 애러)  ##k8s에서는 아직 GPU는 공유할 수 없는 리소스이므로 requests와 limits 값이 반드시 동일해야!!(gpu 아닌 건 괜찬음)
             limits:
-              nvidia.com/gpu: 2
+              nvidia.com/gpu: 1        #<<<<request랑 일치해야 한다고 애러뜸(deploy 애러)  #k8s에서는 아직 GPU는 공유할 수 없는 리소스이므로 requests와 limits 값이 반드시 동일해야!!(gpu 아닌 건 괜찬음)
             # GPU가 없는 노드에는 스케줄되지 않음
             # GPU가 여러 개 있는 노드라도, 딱 1개만 이 파드에 할당됨
             # Kubernetes는 GPU를 공유하지 않음 (1개 단위로 독점)?
