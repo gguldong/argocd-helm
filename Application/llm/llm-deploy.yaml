@@ -74,7 +74,7 @@ spec:
         - name: llm
           image: 637423586845.dkr.ecr.ap-northeast-2.amazonaws.com/github-action-test:llm-v2.2.0
           ports:
-            - containerPort: 8001
+            - containerPort: 8000
             # - containerPort: 8002   # 두 번째 포트 추가 (gRPC or inference용 등)
           resources:
             requests:
